@@ -20,4 +20,19 @@ for (var j = 2; j < 10; j++) {
 //Ejercicio que muestra si un número es primo.
 console.log("Numero Primo");
 var primo = parseInt(prompt("Por favor, introduce un numero (0 para terminar):"));
-primo % 2 == 0 ? console.log("Es numero primo") : console.log("No es numero primo");
+if (primo < 2) {
+    console.log("El numero ".concat(primo, " no es primo."));
+}
+else if (primo < 4) {
+    console.log("El numero ".concat(primo, " es primo."));
+}
+else {
+    var n = primo;
+    do {
+        n--;
+        if (primo / n == 0) {
+            break;
+        }
+    } while (n > 1);
+    console.log(n == 1 ? "El numero ".concat(primo, " no es primo.") : "El numero ".concat(primo, " es primo."));
+}

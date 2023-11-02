@@ -26,4 +26,18 @@ for(let j: number = 2; j < 10; j++) {
 console.log(`Numero Primo`);
 
 let primo: number | null = parseInt(prompt("Por favor, introduce un numero (0 para terminar):"));
-primo % 2 == 0 ? console.log(`Es numero primo`) : console.log(`No es numero primo`);
+
+if (primo < 2) {
+    console.log(`El numero ${primo} no es primo.`);
+}else if (primo < 4) {
+    console.log(`El numero ${primo} es primo.`); 
+}else {
+    let n: number = primo;
+    do {
+        n--;
+        if (primo % n == 0) {
+            break;
+        }
+    }while(n > 1);
+    console.log(n == 1 ? `El numero ${primo} es primo.`: `El numero ${primo} no es primo.`);
+}

@@ -30,9 +30,9 @@ else {
     var n = primo;
     do {
         n--;
-        if (primo / n == 0) {
+        if (primo % n == 0) {
             break;
         }
     } while (n > 1);
-    console.log(n == 1 ? "El numero ".concat(primo, " no es primo.") : "El numero ".concat(primo, " es primo."));
+    console.log(n == 1 ? "El numero ".concat(primo, " es primo.") : "El numero ".concat(primo, " no es primo."));
 }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Window</title>
+    <script>
+
+        const inicializar = () => {
+            document.getElementById("crear-ventana").onclick = abrirVentana;
+            document.getElementById("desplazar-ventana").onclick = desplazarVentana;
+            document.getElementById("devolver-origen-ventana").onclick = desplazarVentanaOrigen;
+            document.getElementById("aumentar-ventana").onclick = aumentarVentana;
+            document.getElementById("fijar-tamano-ventana").onclick = fijarTamanoVentana;
+            document.getElementById("cerrar-ventana").onclick = cerrarVentanaRemota;
+        };
+
+        let nuevaVentana;
+
+        //funcion para abrir la nueva ventana.
+        const abrirVentana = () => {
+            if (confirm("¿Quieres abrir una nueva ventana?")) {
+                nuevaVentana = window.open("", "", "width=300,height=300,toolbar=no,menubar=no,left=400,top=400");
+
+                if (nuevaVentana) {
+                    nuevaVentana.document.write("<h3>Exemplo de Ventá nova</h3>");
+                    nuevaVentana.document.write("<p><strong>URL:</strong> " + window.location.href + "</p>");
+                    nuevaVentana.document.write("<p><strong>Protocolo:</strong> " + window.location.protocol + "</p>");
+                    nuevaVentana.document.write("<p><strong>Navegador:</strong> " + window.navigator.userAgent + "</p>");
+                    let java = window.navigator.javaEnabled() ? "Si" : "No"
+                    nuevaVentana.document.write("<p><strong>Java disponible:</strong> " + java + "</p>");
+                    nuevaVentana.focus();
+                } else {
+                    alert("No se pudo abrir la nueva ventana.");
+                }
+            }
+        };
+
+        const comprobarVentanaAbierta = () => {
+            return (nuevaVentana && !nuevaVentana.closed);
+        }
+
+        //función para cerar la ventana si está abierta.
+        const cerrarVentanaRemota = () => {
+            if (comprobarVentanaAbierta()) {
+                nuevaVentana.close();
+            } else {
+                alert("No hay ninguna ventana abierta sobre la que realizar la acción.");
+            }
+        };
+
+        //función para desplazar ventana en 50px
+        const desplazarVentana = () => {
+            if (comprobarVentanaAbierta()) {
+                nuevaVentana.moveBy(50, 50);
+                nuevaVentana.focus();
+            } else {
+                alert("No hay ninguna ventana abierta sobre la que realizar la acción.");
+            }
+
+        };
+
+        //función para devolver la ventana a su posición inicial.
+        const desplazarVentanaOrigen = () => {
+            if (comprobarVentanaAbierta()) {
+                nuevaVentana.moveTo(400, 400);
+                nuevaVentana.focus();
+            } else {
+                alert("No hay ninguna ventana abierta sobre la que realizar la acción.");
+            }
+
+        }
+
+        //función para aumentar el tamaño de la ventana en 50px.
+        const aumentarVentana = () => {
+            if (comprobarVentanaAbierta()) {
+                nuevaVentana.resizeBy(50, 50);
+                nuevaVentana.focus();
+            } else {
+                alert("No hay ninguna ventana abierta sobre la que realizar la acción.");
+            }
+        }
+
+        //función para dar a la ventana un tamaño de 500px.
+        const fijarTamanoVentana = () => {
+            if (comprobarVentanaAbierta()) {
+                nuevaVentana.resizeTo(500, 500);
+                nuevaVentana.focus();
+            } else {
+                alert("No hay ninguna ventana abierta sobre la que realizar la acción.");
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="inicializar()">
+    <h1>UD3. JavaScript Window</h1>
+
+    <!-- Botones para interactuar con la ventana -->
+    <button id="crear-ventana">Abrir Ventana</button>
+    <button id="desplazar-ventana">Desplazar Ventana</button>
+    <button id="devolver-origen-ventana">Devolver Ventana Origen</button>
+    <button id="aumentar-ventana">Aumentar tamaño Ventana</button>
+    <button id="fijar-tamano-ventana">Fijar tamaño en 500 Ventana</button>
+    <button id="cerrar-ventana">Cerrar Ventana</button>
+
+
+</body>
+
+</html>

@@ -33,7 +33,7 @@ const proponerNombreUsuario = (cadena) => {
 
     return cadena;
 }
-
+/*
 //Inicio de la ejecución del script.
 let cadena = prompt("Introduce tú nombre y apellidos: ");
 
@@ -44,7 +44,7 @@ console.log("La cadena '" + cadena + "' en minusculas es: " + cadena.toLowerCase
 console.log("La cadena '" + cadena + "' en mayusculas es: " + cadena.toUpperCase());
 console.log("la cadena '" + cadena + "' formateada es: " + formatearCadena(cadena));
 console.log("La propuesta de nombre de usuario para '" + cadena + "' es: " + proponerNombreUsuario(cadena));
-
+*/
 
 /**
  * Pide agora unha contrasinal y comprobaremos que cumpre coas seguintes premisas:
@@ -113,7 +113,7 @@ const comprobarEspeciales = (cadena) => {
 }
 
 //Inicio del la ejecución del script.
-let pass = prompt("Introduce una contraseña de entre 8 y 16 caracteres que contenga: mayusculas, minusculas, numeros y caracteres especiales: ");
+let pass = prompt("Introduce una contraseña: ");
 
 if (!comprobarLongitud(pass)) {
     console.log("La contraseña no tiene la longitud requerida.");

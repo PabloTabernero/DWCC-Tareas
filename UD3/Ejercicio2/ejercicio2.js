@@ -19,8 +19,8 @@ const calcularDias = () => {
 //el cumpleaños va a caer en fin de semana desde este año hasta el 2100.
 const proximosCumplesEnFinde = () => {
 
-    let fechaCumpleanos = new Date(prompt("Introduce la fecha tú cumpleaños (YYYY-MM-DD): "));
-    console.log("La fecha de tú cumpleaños es: " + fechaCumpleanos);
+    let fechaCumpleanos = new Date(prompt("Introduce la fecha tu cumpleanos (YYYY-MM-DD): "));
+    console.log("La fecha de tu cumpleanos es: " + fechaCumpleanos);
 
     //Actualizo el año actual a la fecha del cumpleaños.
     fechaCumpleanos.setFullYear(new Date().getFullYear());

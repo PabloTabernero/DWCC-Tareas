@@ -94,19 +94,4 @@ let inicio = parseInt(entradaInicio);
 let entradaFin = prompt("Introduce el valor de la posición final: ");
 let fin = parseInt(entradaFin);
 
-//console.log(validar(inicio, fin, pa))
 console.log("Los paises seleccionados son: " + extraerPaises(inicio, fin, paises) + ".");
-
-
-
-
-
-/*
-    if (validarFin(inicio, fin)) {
-        let piasesExtraidos = extraerPaises(paises, inicio, fin);
-    } else {
-        alert("El valor final introducido no es valido")
-    }
-} else {
-    alert("El valor inicial introducido no es valido.")
-}*/

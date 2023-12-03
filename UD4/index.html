@@ -1,10 +1,151 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Ejercicio 3</title>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarea UD4</title>
     <script src="Tarea.js"></script>
-</head>
-<body>   
-</body>
+  </head>
+
+  <body>
+    <h1>Tarea UD4</h1>
+
+    <h2>Arrays e Funcións</h2>
+
+    <p id="listadoOriginal">Este es el array de paises original:</p>
+    <h3>A partir dun Array con un listado de países realiza o seguinte:</h3>
+
+    <ul>
+      <!-- Amosa o número de elementos do Array -->
+      <li>
+        <h3>Amosa o número de elementos do Array.</h3>
+        <p id="longitudArray">La longitud del array es:</p>
+      </li>
+      <!-- Amosa todos os paises -->
+      <li>
+        <h3>Amosa todos os paises.</h3>
+        <p id="listadoPaises">El listado de todos los paises es:</p>
+      </li>
+      <!-- Amosa todos os paises en sentido inverso -->
+      <li>
+        <h3>
+          Amosa todos os paises en sentido inverso.<strong
+            ><u>Ollo, que o Array orixinal non quede modificado</u></strong
+          >
+          , é dicir, que non quede ordenado ao revés.
+        </h3>
+        <p id="listadoInverso">
+          El listado de todos los paises en orden inverso es:
+        </p>
+      </li>
+      <!-- Engade un pais ao comezo do Array -->
+      <li>
+        <h3>Engade un pais ao comezo do Array.</h3>
+        <p id="anadirPaisInicio">El listado de todos los paises es:</p>
+      </li>
+      <!-- Engade un pais ao final do Array -->
+      <li>
+        <h3>Engade un pais ao final do Array.</h3>
+        <p id="anadirPaisFinal">El listado de todos los paises es:</p>
+      </li>
+      <!-- Elimina un elemento ao comezo do Array e indica cal foi -->
+      <li>
+        <h3>Elimina un elemento ao comezo do Array e indica cal foi.</h3>
+        <p id="paisEliminadoPrincipio">El pais elimiando de la lista fue:</p>
+        <p id="eliminarPaisInicio">El listado de todos los paises es:</p>
+      </li>
+      <!-- Elimina un elemento ao final do Array e indica cal foi -->
+      <li>
+        <h3>Elimina un elemento ao final do Array e indica cal foi.</h3>
+        <p id="paisEliminadoFinal">El pais elimiando de la lista fue:</p>
+        <p id="eliminarPaisFinal">El listado de todos los paises es:</p>
+      </li>
+      <!-- Amosa o elemento que se atope na posición que che indique o usuario. -->
+      <li>
+        <h3>
+          Amosa o elemento que se atope na posición que che indique o usuario.
+        </h3>
+        <p id="mostrarElemento">El elemento de la posicon seleccionada es:</p>
+      </li>
+      <!-- Amosa a posición na que se atopa un elemento indicado polo usuario. -->
+      <li>
+        <h3>
+          Amosa a posición na que se atopa un elemento indicado polo usuario.
+        </h3>
+        <p id="mostrarPosicion">La posicion del elemento seleccionado es:</p>
+      </li>
+      <!-- /• Amosa os elementos que se atopan entre dúas posicións indicadas polo usuario. -->
+      <li>
+        <h3>
+          Amosa os elementos que se atopan entre dúas posicións indicadas polo
+          usuario.
+        </h3>
+        <p id="mostrarElementosInternos"></p>
+      </li>
+    </ul>
+
+    <script>
+      // Amosa o array de paises original
+      document.getElementById("listadoOriginal").innerText +=
+        mostrarPaises(paises) + ".";
+
+      // Amosa o número de elementos do Array
+      document.getElementById("longitudArray").innerText +=
+        " " + tamanoArray(paises);
+
+      // Amosa todos os paises
+      document.getElementById("listadoPaises").innerText +=
+        mostrarPaises(paises) + ".";
+
+      // Amosa todos os paises en sentido inverso
+      document.getElementById("listadoInverso").innerText +=
+        mostrarPaisesInvertido(paises) + ".";
+
+      // Engade un pais ao comezo do Array
+      let nuevaListaInicio = anadirPaisAlInicio(paises, "Andorra");
+      document.getElementById("anadirPaisInicio").innerText +=
+        mostrarPaises(nuevaListaInicio) + ".";
+
+      // Engade un pais ao final do Array
+      let nuevaListaFin = anadirPaisAlFinal(nuevaListaInicio, "Grecia");
+      document.getElementById("anadirPaisFinal").innerText +=
+        mostrarPaises(nuevaListaFin) + ".";
+
+      // Elimina un elemento ao comezo do Array e indica cal foi
+      let eliminacionPrincipio = elimiarPaisDelInicio(nuevaListaFin);
+      document.getElementById("eliminarPaisInicio").innerText +=
+        mostrarPaises(eliminacionPrincipio.nuevoArray) + ".";
+      document.getElementById("paisEliminadoPrincipio").innerText +=
+        " " + eliminacionPrincipio.elemento + ".";
+
+      // Elimina un elemento ao final do Array e indica cal foi
+      let eliminacionFinal = eliminarPaisDeLFinal(
+        eliminacionPrincipio.nuevoArray
+      );
+      document.getElementById("eliminarPaisFinal").innerText +=
+        mostrarPaises(eliminacionFinal.nuevoArray) + ".";
+      document.getElementById("paisEliminadoFinal").innerText +=
+        " " + eliminacionFinal.elemento + ".";
+
+      // Amosa o elemento que se atope na posición que che indique o usuario.
+      document.getElementById("mostrarElemento").innerText +=
+        " " + obtenerElemento(paises, posicion);
+
+      //Amosa a posición na que se atopa un elemento indicado polo usuario.
+      document.getElementById("mostrarPosicion").innerText +=
+        " " + exitePais(paises, entrada);
+
+      //Amosa os elementos que se atopan entre dúas posicións indicadas polo usuario.
+      let nuevaListaPaises = extraerPaises(inicio, fin, paises);
+      if (nuevaListaPaises !== null) {
+        document.getElementById("mostrarElementosInternos").innerText =
+          "Los paises seleccionados son: " +
+          mostrarPaises(nuevaListaPaises) +
+          ".";
+      } else {
+        document.getElementById("mostrarElementosInternos").innerText =
+          "No se han podido seleccionar países seleccionados.";
+      }
+    </script>
+  </body>
 </html>

@@ -27,6 +27,7 @@ class Disco {
         console.log('Año Publicación: ' + this.anoPublicacion);
         console.log('Tipo de Música: ' + this.tipoMusica);
         console.log('Presatado: ' + this.prestado);
+        console.log('');
     }
 
     static verColeccion(coleccion) {
@@ -34,7 +35,7 @@ class Disco {
     } 
 }
 
-//
+//Ejecución
 let coleccion = [];
 
 let disco1 = new Disco("Master of Puppets", "Metallica", 1986, "Metal", false);

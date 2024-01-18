@@ -28,7 +28,6 @@ class Disco {
         console.log('Tipo de Música: ' + this.tipoMusica);
         console.log('Presatado: ' + this.prestado);
         console.log('');
-        console.log('');
     }
 
     static verColeccion(coleccion) {

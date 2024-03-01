@@ -14,6 +14,51 @@ Consideraciones de implementación:
 - En caso de que falle la validación para varios campos el foco del formulario irá al último campo en el que ha fallado la validación.
 - Al boton limpiar se le añaden funcionalidades para que además de limpiar los campos del formulario, tambien borre los errores e intentos de pantalla, además de reiniciar el contador de intentos a 0.
 
+### Capturas de error
+
+- Formulario vacío.
+  
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/b6016da1-247f-4b75-a5ae-41a9a0c7e2bd)
+
+- Campo Nombre con caracteres númericos.
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/c27ccc4e-959d-4f86-b8d5-7ea41f09a153)
+
+- Campo Apellidos con caracteres especiales.
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/0e1d188b-ddde-4d04-8d90-2cbbaa9b2297)
+
+- Campo Edad con caracteres no númericos.
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/95bfcffb-5f06-4782-88a2-882b58db8950)
+
+- Campo Edad fuera del rango.
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/2406188b-184c-4b02-907a-1e522935f73b)
+
+- Campo NIF con formato incorrecto (sin guión).
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/ca094249-f651-456f-8047-f9eed8996d2e)
+
+- Campo Email con formato incorrecto (dos @).
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/e03b5499-8680-4910-a72e-ba8f491c1f03)
+  
+- Campo Fecha de nacimiento con formato incorrecto (mezclando / y -).
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/48f2f6be-0674-4c67-954a-ccb6f2a40bfb)
+
+- Campo Teléfono con formato incorrecto (un espacio en blanco).
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/603aeae6-0afe-49b6-8c22-d40c99ed31b2)
+
+- Campo Hora de visita con formato incorrecto (introduciendo formato hh:mm:ss).
+
+  ![image](https://github.com/PabloTaber/DWCC-Tareas/assets/137113370/14fddc8c-c12f-48fc-b9b4-c8821404f1cd)
+
+
+
+
 ## Tarea:  UD2.2
 
 ### Comentarios

@@ -2,8 +2,19 @@
 
 Este repositorio contiene las tareas realizadas para la asignatura "Desenvolvemento web en contorno cliente".
 
+## Tarea Actual: Tarea UD05
 
-## Tarea Actual: Tarefa UD2.2
+### Comentarios
+
+Se realiza el script solicitado para la validación de un formulario html.
+
+Consideraciones de implementación: 
+- Se validan todos los campos del formulario en el momento de pulsar el boton enviar, mostrando mensajes de error para cada uno de los campos en los que falle la validación.
+- De cada campo se valida primero que no sea vacío (todos los campos son obligatorios) y después que cumplan con los formatos requeridos.
+- En caso de que falle la validación para varios campos el foco del formulario irá al último campo en el que ha fallado la validación.
+- Al boton limpiar se le añaden funcionalidades para que además de limpiar los campos del formulario, tambien borre los errores e intentos de pantalla, además de reiniciar el contador de intentos a 0.
+
+## Tarea:  UD2.2
 
 ### Comentarios
 

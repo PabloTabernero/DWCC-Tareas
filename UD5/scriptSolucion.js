@@ -4,7 +4,7 @@
  * Autor: Pablo Tabenernero Vidal
  * Fecha: 01 de Marzo de 2024
  * 
- * Este script para la validación del formulario de la página tarea.html.
+ * Script para la validación del formulario de la página tarea.html.
  * 
  * Consideraciones de implementación: 
  * - Se validan todos los campos del formulario en el momento de pulsar el boton enviar, mostrando mensajes

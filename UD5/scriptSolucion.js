@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
             apellidos.focus();
             return false;
         } else if (!patronApellidos.test(valorApellidos)) {
-            mostrarErrores('El nombre solo puede contener letras y espacios en blanco.');
+            mostrarErrores('El apellidos solo puede contener letras y espacios en blanco.');
             apellidos.focus();
             return false;
         }
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
             hora.focus();
             return false;
         } else if (!hora.value.match(patronHora)) {
-            mostrarErrores('El campo hora debe tener el formato hh:hh.');
+            mostrarErrores('El campo hora debe tener el formato hh:mm.');
             hora.focus();
             return false;
         }
